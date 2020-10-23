@@ -14,7 +14,7 @@ public class Main {
                 try {
                     bankAccount.withDraw((int) (a.getRemainingAmount()));
                 } catch (LimitException e) {
-                    e.printStackTrace();
+                    System.out.println(a.getMessage());
                 }
                 break;
             }
