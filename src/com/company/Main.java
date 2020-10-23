@@ -11,6 +11,11 @@ public class Main {
                 bankAccount.withDraw(6000);
             } catch (LimitException a){
                 System.out.println(a.getMessage());
+                try {
+                    bankAccount.withDraw((int) (a.getRemainingAmount()));
+                } catch (LimitException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
         }
